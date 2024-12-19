@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การจองอุปกรณ์</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-blue-500 text-white p-4">
+        <div class="container mx-auto">
+            <a href="{% url 'home' %}" class="font-bold text-xl">Sport Booking</a>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container mx-auto mt-10">
+        <h2 class="text-2xl font-bold mb-4">จองอุปกรณ์กีฬา</h2>
+        <form action="{% url 'equipment_booking' %}" method="POST" class="bg-white p-6 rounded shadow-md">
+            {% csrf_token %}
+            <label class="block mb-2">เลือกอุปกรณ์กีฬา:</label>
+            <select name="equipment" class="w-full p-2 border rounded mb-4">
+                <option>ฟุตบอล</option>
+                <option>บาสเก็ตบอล</option>
+                <option>วอลเลย์บอล</option>
+            </select>
+            <label class="block mb-2">เลือกวันที่:</label>
+            <input type="date" name="date" class="w-full p-2 border rounded mb-4">
+            <label class="block mb-2">เลือกเวลา:</label>
+            <input type="time" name="time" class="w-full p-2 border rounded mb-4">
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">ยืนยันการจอง</button>
+        </form>
+        <a href="{% url 'home' %}" class="mt-4 inline-block bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-700">
+            ย้อนกลับไปหน้าแรก
+        </a>
+        
+    </div>
+</body>
+</html>

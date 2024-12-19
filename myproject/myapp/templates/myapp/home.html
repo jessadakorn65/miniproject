@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบจองอุปกรณ์กีฬา</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-500 text-white shadow-lg">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="{% url 'home' %}" class="text-xl font-bold">Sport Booking</a>
+            <ul class="flex space-x-6">
+                <li><a href="{% url 'home' %}" class="hover:text-gray-200">Home</a></li>
+                <li><a href="{% url 'equipment_booking' %}" class="hover:text-gray-200">การจองอุปกรณ์</a></li>
+                <li><a href="{% url 'booking_history' %}" class="hover:text-gray-200">ประวัติการจอง</a></li>
+                <li><a href="{% url 'equipment_management' %}" class="hover:text-gray-200">การจัดการอุปกรณ์</a></li>
+            </ul>
+            <div>
+                <a href="{% url 'login' %}" class="bg-white text-blue-500 py-1 px-3 rounded hover:bg-gray-200">เข้าสู่ระบบ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Content -->
+    <header class="bg-blue-500 text-white text-center py-16">
+        <h1 class="text-4xl font-bold mb-4">ยินดีต้อนรับสู่ระบบจองอุปกรณ์กีฬา</h1>
+        <p class="text-lg mb-6">เลือกอุปกรณ์กีฬาและจองได้ง่าย ๆ เพียงไม่กี่คลิก</p>
+        <a href="{% url 'equipment_booking' %}" class="bg-white text-blue-500 py-2 px-4 rounded hover:bg-gray-200">เริ่มต้นการจอง</a>
+    </header>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4">
+        <p>&copy; 2024 ระบบจองอุปกรณ์กีฬา | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
